@@ -238,3 +238,87 @@ const basicCalculator = (num1, num2, operation) => {
 };
 
 console.log("Exercise 9 Result:", basicCalculator(10, 5, "subtract"));
+
+//!###############################################################
+/*
+Exercise 10: calculateGrade()
+
+Define a function called calculateGrade. 
+It should take a numerical score and return the corresponding letter 
+grade (A, B, C, D, F). 
+
+For example, 90 and above yields an 'A', 80-89 is a 'B', 
+and 70-79 is a 'C', 60-69 is a 'D' and anything lower than a 60 is an 'F'.
+
+Example: calculateGrade(100) should return A.
+
+Complete the exercise in the space below:
+*/
+
+const calculateGrade = (score) => {
+  if (typeof score !== "number") {
+    return "Please provide a valid numeric score.";
+  }
+
+  if (score < 0 || score > 100) {
+    return "Score must be between 0 and 100.";
+  }
+
+  if (score >= 90) return "A";
+  if (score >= 80) return "B";
+  if (score >= 70) return "C";
+  if (score >= 60) return "D";
+  return "F";
+};
+
+console.log("Exercise 10 Result:", calculateGrade(85));
+
+//!###############################################################
+/*
+Exercise 11: createUsername()
+
+Define a function called createUsername. 
+It should take a first name and a last name and return a username. 
+
+The username should be a combination of the following:
+- The first three letters of the first name.
+- The first three letters of the last name.
+- The total character count of the first and last name combined.
+
+Example: createUsername('Samantha', 'Green') should return 'SamGre13'.
+
+Complete the exercise in the space below:
+*/
+
+const createUsername = (firstName, lastName) => {
+  if (
+    typeof firstName === "string" &&
+    typeof lastName === "string" &&
+    firstName.length >= 3 &&
+    lastName.length >= 3
+  ) {
+    const firstPart = firstName.slice(0, 3);
+    const lastPart = lastName.slice(0, 3);
+    const totalLength = firstName.length + lastName.length;
+
+    return `${firstPart}${lastPart}${totalLength}`;
+  } else {
+    return "Both names must be at least 3 characters long.";
+  }
+};
+
+console.log("Exercise 11 Result:", createUsername("Samantha", "Green"));
+
+//!###############################################################
+/*
+Exercise 12: numArgs()
+
+Challenge yourself with numArgs. 
+This function should return the count of arguments passed to it when called.
+
+Complete the exercise in the space below:
+*/
+
+const numArgs = (...args) => args.length;
+
+console.log("Exercise 12 Result:", numArgs(1, 2, 3, 4));
